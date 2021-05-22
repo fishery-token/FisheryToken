@@ -1,9 +1,8 @@
 /**
- *Submitted for verification at BscScan.com on 2021-05-12
-*/
-
-/**
- *Submitted for verification at BscScan.com on 2021-05-09
+* Contract for FisheryToken $FT
+* This project is initiated and in full responsibility of FisheryToken Team
+* Total of 1,000,000,000,000,000,000 FT
+* 
 */
 
 pragma solidity ^0.6.12;
@@ -466,7 +465,7 @@ contract Ownable is Context {
     //Unlocks the contract for owner when _lockTime is exceeds
     function unlock() public virtual {
         require(_previousOwner == msg.sender, "You don't have permission to unlock");
-        require(now > _lockTime , "Contract is locked until 7 days");
+        require(now > _lockTime , "Contract is locked until 1 year");
         emit OwnershipTransferred(_owner, _previousOwner);
         _owner = _previousOwner;
     }
@@ -686,7 +685,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
 }
 
 
-contract HuskyShiba is Context, IERC20, Ownable {
+contract FisheryToken is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
 
@@ -704,8 +703,8 @@ contract HuskyShiba is Context, IERC20, Ownable {
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "HuskyShiba";
-    string private _symbol = "HSHIBA";
+    string private _name = "FisheryToken";
+    string private _symbol = "FISHERY";
     uint8 private _decimals = 9;
     
     uint256 public _taxFee = 5;
